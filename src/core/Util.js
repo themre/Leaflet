@@ -150,7 +150,7 @@ L.Util = {
 		var params = [];
 		for (var i in obj) {
 			var value = obj[i];
-			if (value.indexOf('(')) {
+			if (typeof value === 'string' && value.indexOf('(') > -1) {
 				value.replace(/\(/g, '%28').replace(/\)/g, '%29');
 			}
 			params.push(encodeURIComponent(uppercase ? i.toUpperCase() : i) + '=' + encodeURIComponent(value));
